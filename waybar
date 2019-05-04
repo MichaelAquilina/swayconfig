@@ -1,0 +1,66 @@
+{
+    "layer": "top",
+    "height": 30,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "tray"],
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}"
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "{usage:3}% ",
+        "tooltip": false,
+        "on-click": "tilix -e htop"
+    },
+    "memory": {
+        "format": "{:3}% "
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC:3}°C "
+    },
+    "backlight": {
+        "interval": 1,
+        "device": "intel_backlight",
+        "format": "{percent:3}% {icon}",
+        "format-icons": ["", ""],
+        "on-scroll-up": "light -A 2",
+        "on-scroll-down": "light -U 2"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity:3}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "tilix -e nmcli device wifi list"
+    },
+    "pulseaudio": {
+        "format": "{volume:3}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    }
+}
