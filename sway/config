@@ -10,7 +10,7 @@ bar {
 # Dell Laptop screen
 output "Sharp Corporation 0x1421 0x00000000" {
     scale 2.0
-    background "$HOME/Documents/Bloodborne Weapons.png" fill
+    background "$HOME/Wallpaper.png" fill
 }
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
