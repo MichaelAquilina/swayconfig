@@ -32,12 +32,13 @@ bindsym Mod1+l exec killall -SIGUSR1 swayidle
 # kill focused window
 bindsym Mod1+q kill
 
-# application shortcuts
-bindsym Mod1+d exec "rofi -show drun -modi drun,calc"
+# Force GDK Backend for all applications that launch
+bindsym Mod1+d exec GDK_BACKEND="wayland" rofi -show drun -modi "drun"
+bindsym Mod1+b exec GDK_BACKEND="wayland" firefox
 bindsym Mod1+p exec rofi-pass
 bindsym Mod1+Return exec tilix
-bindsym Mod1+b exec GDK_BACKEND="wayland" firefox
-bindsym Print exec grim "$HOME/Pictures/$(date "+%Y-%m-%d_%H-%M-%S").png" && notify-send "Screenshot saved"
+bindsym Print exec grim "$HOME/Pictures/$(date "+%Y-%m-%d_%H-%M-%S").png" \
+                   && notify-send "Screenshot saved"
 
 # Don't wrap between containers when moving
 focus_wrapping no
