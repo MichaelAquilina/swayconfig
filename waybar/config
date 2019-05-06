@@ -1,9 +1,8 @@
 {
     "layer": "top",
     "height": 30,
-    "modules-left": ["sway/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "tray"],
+    "modules-left": ["sway/workspaces", "clock"],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "backlight", "battery", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -11,20 +10,24 @@
         "spacing": 10
     },
     "clock": {
-        "format": "{:%Y-%m-%d %H:%M}"
+        "format": "{:%Y-%m-%d %H:%M}",
+        "format-alt": "{:%A %d %B %R}",
+        "tooltip": false
     },
     "cpu": {
         "interval": 1,
         "format": "{usage:3}% ",
-        "tooltip": false,
-        "on-click": "tilix -e htop"
+        "on-click": "tilix -e htop",
+        "tooltip": false
     },
     "memory": {
-        "format": "{:3}% "
+        "format": "{:3}% ",
+        "tooltip": false
     },
     "temperature": {
         "critical-threshold": 80,
-        "format": "{temperatureC:3}°C "
+        "format": "{temperatureC:3}°C ",
+        "tooltip": false
     },
     "backlight": {
         "interval": 1,
@@ -32,7 +35,8 @@
         "format": "{percent:3}% {icon}",
         "format-icons": ["", ""],
         "on-scroll-up": "light -A 2",
-        "on-scroll-down": "light -U 2"
+        "on-scroll-down": "light -U 2",
+        "tooltip": false
     },
     "battery": {
         "states": {
@@ -40,13 +44,14 @@
             "critical": 15
         },
         "format": "{capacity:3}% {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "tilix -e nmcli device wifi list"
+        "tooltip": false
     },
     "pulseaudio": {
         "format": "{volume:3}% {icon}",
@@ -61,6 +66,9 @@
             "car": "",
             "default": ["", ""]
         },
-        "on-click": "pavucontrol"
+        "tooltip": false,
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ +5%"
     }
 }
