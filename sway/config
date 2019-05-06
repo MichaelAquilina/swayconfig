@@ -10,6 +10,9 @@ bar {
 # Dell Laptop screen
 output "Sharp Corporation 0x1421 0x00000000" {
     scale 2.0
+}
+
+output "*" {
     background "$HOME/Wallpaper.png" fill
 }
 
