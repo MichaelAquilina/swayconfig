@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "height": 30,
-    "modules-left": ["sway/workspaces", "clock"],
+    "modules-left": ["sway/workspaces", "clock#1", "clock#2"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "backlight", "battery", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -9,9 +9,16 @@
     "tray": {
         "spacing": 10
     },
-    "clock": {
-        "format": "{:%Y-%m-%d %H:%M}",
-        "format-alt": "{:%A %d %B %R}",
+    "clock#1": {
+        "interval": 10,
+        "format": "{:%Y-%m-%d}",
+        "format-alt": "{:%A %d %B}",
+        "tooltip": false
+    },
+    "clock#2": {
+        "interval": 10,
+        "format": "{:%R}",
+        "format-alt": "{:%I:%M%p}",
         "tooltip": false
     },
     "cpu": {
