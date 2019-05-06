@@ -1,1 +1,3 @@
 default-timeout=7000
+background-color=#262626
+format=<b>%s (%a)</b>\n%b
