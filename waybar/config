@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "height": 30,
-    "modules-left": ["sway/workspaces", "clock#1", "clock#2"],
+    "modules-left": ["sway/workspaces", "clock#1", "clock#2", "idle_inhibitor"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "backlight", "battery", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -20,6 +20,13 @@
         "format": "{:%R}",
         "format-alt": "{:%I:%M%p}",
         "tooltip": false
+    },
+     "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
     "cpu": {
         "interval": 1,
