@@ -4,6 +4,8 @@ font pango:Roboto Sans Mono 10
 
 # notification daemon
 exec --no-startup-id mako
+exec_always --no-startup-id makoctl reload
+
 # Auto lock the screen after being idle
 exec --no-startup-id swayidle -w \
     timeout 300 'swaylock' \
@@ -54,6 +56,8 @@ bindsym {
 
     # kill focused window
     Mod1+q kill
+
+    Mod1+n exec makoctl invoke
 
     # Force GDK Backend for all applications that launch
     Mod1+d exec GDK_BACKEND="wayland" rofi -show drun -modi "drun"
