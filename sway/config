@@ -57,6 +57,7 @@ bindsym {
     # kill focused window
     Mod1+q kill
 
+    # Notifications
     Mod1+n exec makoctl invoke
     Mod1+m exec makoctl dismiss
 
@@ -66,13 +67,14 @@ bindsym {
     Mod1+p exec rofi-pass
     Mod1+Return exec tilix
 
+    # Screenshots
     Shift+Print exec grim -g "$(slurp -d)" \
                 "$HOME/Pictures/$(date "+%Y-%m-%d_%H-%M-%S").png" \
                 && notify-send "Screenshot saved"
     Print exec grim "$HOME/Pictures/$(date "+%Y-%m-%d_%H-%M-%S").png" \
                && notify-send "Screenshot saved"
 
-    # Bind keys for volume control
+    # Volume Control
     --locked Mod1+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     --locked Mod1+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
     --locked Mod1+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -81,11 +83,11 @@ bindsym {
     --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
     --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-    # Bind keys for setting brightness
+    # Brightness Controls
     --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
     --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
 
-    # Bind keys for media controls
+    # Media Controls
     --locked Mod1+F5 exec playerctl previous
     --locked Mod1+F6 exec playerctl play-pause
     --locked Mod1+F7 exec playerctl next
@@ -105,6 +107,7 @@ bindsym {
     Mod1+Shift+Up move up
     Mod1+Shift+Right move right
 
+    # Sway controls
     Mod1+h split h
     Mod1+v split v
     Mod1+f fullscreen toggle
