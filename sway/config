@@ -64,9 +64,9 @@ bindsym {
                && notify-send "Screenshot saved"
 
     # Bind keys for volume control
-    Mod1+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-    Mod1+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-    Mod1+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    --locked Mod1+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    --locked Mod1+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    --locked Mod1+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
     --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
     --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
