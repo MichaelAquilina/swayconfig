@@ -17,7 +17,7 @@ bar {
 }
 
 # Dell Laptop screen
-output "Sharp Corporation 0x1421 0x00000000" {
+output eDP-1 {
     scale 2.0
 }
 
