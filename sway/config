@@ -129,7 +129,7 @@ bindsym {
     # reload the configuration file
     Mod1+Shift+c reload
     # exit sway (logs you out of your X session)
-    Mod1+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to logout?' -B 'Logout' 'swaymsg exit'"
+    Mod1+Shift+e exec "swaynag -t warning -m 'You pressed the logout shortcut. Do you really want to logout?' -B 'Logout' 'swaymsg exit'"
     # Start resize mode
     Mod1+r mode "resize"
 }
