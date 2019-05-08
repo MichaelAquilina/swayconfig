@@ -19,6 +19,7 @@ bar {
 # Dell Laptop screen
 output eDP-1 {
     scale 2.0
+    pos 0 0
 }
 
 output "*" {
