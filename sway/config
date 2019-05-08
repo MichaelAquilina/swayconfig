@@ -58,6 +58,7 @@ bindsym {
     Mod1+q kill
 
     Mod1+n exec makoctl invoke
+    Mod1+m exec makoctl dismiss
 
     # Force GDK Backend for all applications that launch
     Mod1+d exec GDK_BACKEND="wayland" rofi -show drun -modi "drun"
