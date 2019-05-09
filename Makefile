@@ -9,3 +9,4 @@ install:
 	ln -sf $$PWD/mako $$HOME/.config/mako
 	rm -rf $$HOME/.config/swaylock
 	ln -sf $$PWD/swaylock $$HOME/.config/swaylock
+	ln -sf $$PWD/bin/playerbar.sh $$HOME/bin/playerbar.sh
