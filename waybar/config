@@ -12,7 +12,8 @@
     "custom/playerctl": {
         "exec": "playerctl metadata -f '[{{status}}] {{artist}} - {{album}} - {{title}}' | sed 's/\\[Playing\\]//' | sed 's/\\[Paused\\]//'",
         "interval": 1,
-        "on-click": "playerctl play-pause"
+        "on-click": "playerctl play-pause",
+        "tooltip": false
     },
     "clock#1": {
         "interval": 10,
