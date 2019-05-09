@@ -2,13 +2,12 @@
     border: none;
     border-radius: 0;
     font-family: Roboto Sans Mono;
-    font-size: 13px;
+    font-size: 14px;
     min-height: 0;
 }
 
 window#waybar {
     background: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
 }
 
@@ -56,15 +55,14 @@ window#waybar.hidded {
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        color: #ff0000;
     }
 }
 
 #battery.critical:not(.charging) {
     color: #ffffff;
     animation-name: blink;
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
