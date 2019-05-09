@@ -30,7 +30,7 @@ window#waybar.hidded {
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
+    background: #eb4d4b;
 }
 
 #mode {
@@ -117,13 +117,11 @@ label:focus {
     color: #2a5c45;
 }
 
-#custom-media {
+#custom-playerctl {
     background: #66cc99;
     color: #2a5c45;
-}
-
-.custom-spotify {
-    background: #66cc99;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .custom-vlc {

@@ -1,13 +1,18 @@
 {
     "layer": "top",
     "height": 30,
-    "modules-left": ["sway/workspaces", "clock#1", "clock#2", "idle_inhibitor"],
+    "modules-left": ["sway/workspaces", "clock#1", "clock#2", "custom/playerctl", "idle_inhibitor"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "backlight", "battery", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
     "tray": {
         "spacing": 10
+    },
+    "custom/playerctl": {
+        "exec": "playerctl metadata -f '{{artist}} - {{album}} - {{title}}'",
+        "interval": 5,
+        "on-click": "playerctl play-pause"
     },
     "clock#1": {
         "interval": 10,
