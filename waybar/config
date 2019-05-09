@@ -1,8 +1,9 @@
 {
     "layer": "top",
     "height": 30,
-    "modules-left": ["sway/workspaces", "clock#1", "clock#2", "custom/playerctl", "idle_inhibitor"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "backlight", "battery", "tray"],
+    "modules-left": ["sway/workspaces", "custom/playerctl", "idle_inhibitor"],
+    "modules-center": ["clock"],
+    "modules-right": ["backlight", "pulseaudio", "network", "cpu", "memory", "battery", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
@@ -15,24 +16,18 @@
         "on-click": "playerctl play-pause",
         "tooltip": false
     },
-    "clock#1": {
+    "clock": {
         "interval": 10,
-        "format": "{:%Y-%m-%d}",
-        "format-alt": "{:%A %d %B}",
+        "format": "{:%a %b %y %R}",
         "tooltip": false
     },
-    "clock#2": {
-        "interval": 10,
-        "format": "{:%R}",
-        "format-alt": "{:%I:%M%p}",
-        "tooltip": false
-    },
-     "idle_inhibitor": {
+    "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
+        "tooltip": false
     },
     "cpu": {
         "interval": 1,

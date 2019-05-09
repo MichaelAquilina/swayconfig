@@ -44,25 +44,14 @@ window#waybar.hidded {
     color: #ffffff;
 }
 
-#clock.1 {
-    background-color: #64727D;
-    font-size: 16px;
-}
-#clock.2 {
-    color: #fba922;
-    background-color: #64727D;
-    font-size: 16px;
-    font-weight: bold;
+#clock {
+    border-bottom: 3px solid #ffffff;
 }
 
 #battery {
-    background-color: #ffffff;
-    color: #000000;
 }
 
 #battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
 }
 
 @keyframes blink {
@@ -73,7 +62,6 @@ window#waybar.hidded {
 }
 
 #battery.critical:not(.charging) {
-    background: #f53c3c;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -87,53 +75,29 @@ label:focus {
 }
 
 #cpu {
-    background: #2ecc71;
-    color: #000000;
 }
 
 #memory {
-    background: #9b59b6;
 }
 
 #backlight {
-    background: #90b1b1;
 }
 
 #network {
-    background: #2980b9;
 }
 
 #network.disconnected {
-    background: #f53c3c;
 }
 
 #pulseaudio {
-    background: #f1c40f;
-    color: #000000;
 }
 
 #pulseaudio.muted {
-    background: #90b1b1;
-    color: #2a5c45;
 }
 
 #custom-playerctl {
-    background: #66cc99;
-    color: #2a5c45;
     padding-left: 10px;
     padding-right: 10px;
-}
-
-.custom-vlc {
-    background: #ffa000;
-}
-
-#temperature {
-    background: #f0932b;
-}
-
-#temperature.critical {
-    background: #eb4d4b;
 }
 
 #tray {
@@ -141,27 +105,10 @@ label:focus {
 }
 
 #idle_inhibitor {
-    background-color: #2d3436;
+    border-bottom: 3px solid #aaaaaa;
 }
 
 #idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#mpd {
-    background: #66cc99;
-    color: #2a5c45;
-}
-
-#mpd.disconnected {
-    background: #f53c3c;
-}
-
-#mpd.stopped {
-    background: #90b1b1;
-}
-
-#mpd.paused {
-    background: #51a37a;
+    font-weight: bold;
+    border-bottom: 3px solid #ffffff;
 }
