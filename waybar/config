@@ -1,9 +1,9 @@
 {
     "layer": "top",
     "height": 30,
-    "modules-left": ["sway/workspaces", "custom/playerctl", "idle_inhibitor"],
+    "modules-left": ["sway/workspaces", "custom/playerctl"],
     "modules-center": ["clock"],
-    "modules-right": ["backlight", "pulseaudio", "network", "cpu", "memory", "battery", "tray"],
+    "modules-right": ["idle_inhibitor", "backlight", "pulseaudio", "network", "cpu", "memory", "battery", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
