@@ -18,8 +18,8 @@
     },
     "clock": {
         "interval": 10,
-        "format": "{:%a %b %y - %l:%M %p}",
-        "format-alt": "{:%a %b %y - %R}",
+        "format": "{:%a %e %b %y - %l:%M %p}",
+        "format-alt": "{:%a %e %b %y - %R}",
         "tooltip": false
     },
     "idle_inhibitor": {
