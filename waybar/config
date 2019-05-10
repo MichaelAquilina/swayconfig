@@ -37,6 +37,7 @@
     },
     "memory": {
         "format": "{:3}% ",
+        "on-click": "tilix -e htop",
         "tooltip": false
     },
     "temperature": {
@@ -67,6 +68,7 @@
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-disconnected": "Disconnected ⚠",
+        "on-click": "nm-connection-editor",
         "tooltip": false
     },
     "pulseaudio": {
