@@ -6,6 +6,9 @@ font pango:Roboto Sans Mono 10
 exec --no-startup-id mako
 exec_always --no-startup-id makoctl reload
 
+# Set brightness minimum value
+exec_always --no-startup-id light -N 10
+
 # Auto lock the screen after being idle
 exec --no-startup-id swayidle -w \
     timeout 300 'swaylock' \
