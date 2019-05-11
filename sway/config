@@ -70,11 +70,8 @@ bindsym {
     Mod1+Return exec tilix
 
     # Screenshots
-    Shift+Print exec grim -g "$(slurp -d)" \
-                "$HOME/Pictures/$(date "+%Y-%m-%d_%H-%M-%S").png" \
-                && notify-send "Screenshot saved"
-    Print exec grim "$HOME/Pictures/$(date "+%Y-%m-%d_%H-%M-%S").png" \
-               && notify-send "Screenshot saved"
+    Shift+Print exec $HOME/bin/grim_wrapper.sh -d
+    Print exec  $HOME/bin/grim_wrapper.sh
 
     # Volume Control
     --locked Mod1+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
