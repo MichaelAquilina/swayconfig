@@ -3,6 +3,8 @@ install:
 	ln -sf $$PWD/sway $$HOME/.config/sway
 	rm -rf $$HOME/.config/rofi
 	ln -sf $$PWD/rofi $$HOME/.config/rofi
+	rm -rf $$HOME/.config/rofi-pass
+	ln -sf $$PWD/rofi-pass $$HOME/.config/rofi-pass
 	rm -rf $$HOME/.config/waybar
 	ln -sf $$PWD/waybar $$HOME/.config/waybar
 	rm -rf $$HOME/.config/mako

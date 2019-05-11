@@ -1,0 +1,6 @@
+notify='true'
+default_do='copyMenu'
+
+doClip () {
+    wl-copy
+}
