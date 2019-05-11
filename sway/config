@@ -70,7 +70,7 @@ bindsym {
     Mod1+Return exec tilix
 
     # Screenshots
-    Shift+Print exec $HOME/bin/grim_wrapper.sh -d
+    Shift+Print exec $HOME/bin/grim_wrapper.sh -g
     Print exec  $HOME/bin/grim_wrapper.sh
 
     # Volume Control
