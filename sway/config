@@ -6,6 +6,9 @@ font pango:Roboto Sans Mono 10
 exec --no-startup-id mako
 exec_always --no-startup-id makoctl reload
 
+# Monitor change detection
+exec --no-startup-id kanshi
+
 # Set brightness minimum value
 exec_always --no-startup-id light -N 10
 
