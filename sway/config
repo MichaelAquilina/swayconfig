@@ -34,7 +34,7 @@ output "*" {
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
 
-# dont focus windows when the mouse hovers over them
+# Don't focus windows when the mouse hovers over them
 focus_follows_mouse no
 
 # Don't wrap between containers when moving
