@@ -11,5 +11,7 @@ install:
 	ln -sf $$PWD/mako $$HOME/.config/mako
 	rm -rf $$HOME/.config/swaylock
 	ln -sf $$PWD/swaylock $$HOME/.config/swaylock
+	rm -rf $$HOME/.config/kanshi
+	ln -sf $$PWD/kanshi $$HOME/.config/kanshi
 	ln -sf $$PWD/bin/playerbar.sh $$HOME/bin/playerbar.sh
 	ln -sf $$PWD/bin/grim_wrapper.sh $$HOME/bin/grim_wrapper.sh
