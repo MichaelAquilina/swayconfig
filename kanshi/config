@@ -1,4 +1,8 @@
 {
+    output eDP-1 product 0x144A scale 2.0
+    output DP-1 serial GH85D54N0JQL scale 1.0
+}
+{
     output eDP-1 scale 2.0
 }
 
