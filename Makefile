@@ -15,3 +15,4 @@ install:
 	ln -sf $$PWD/kanshi $$HOME/.config/kanshi
 	ln -sf $$PWD/bin/playerbar.sh $$HOME/bin/playerbar.sh
 	ln -sf $$PWD/bin/grim_wrapper.sh $$HOME/bin/grim_wrapper.sh
+	ln -sf $$PWD/bin/recorder_wrapper.sh $$HOME/bin/recorder_wrapper.sh

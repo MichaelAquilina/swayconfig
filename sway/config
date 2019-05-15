@@ -71,7 +71,7 @@ bindsym {
 
     # Force GDK Backend for all applications that launch
     Mod1+d exec GDK_BACKEND="wayland" rofi -show drun -modi "drun"
-    Mod1+b exec GDK_BACKEND="wayland" firefox
+    Mod1+b exec GDK_BACKEND="wayland" /opt/mozilla/firefox/firefox
     Mod1+p exec rofi-pass
     Mod1+Return exec tilix
     Mod1+i exec nautilus
@@ -79,6 +79,11 @@ bindsym {
     # Screenshots
     Shift+Print exec $HOME/bin/grim_wrapper.sh -g
     Print exec  $HOME/bin/grim_wrapper.sh
+
+    # Video recording
+    Mod1+Insert exec $HOME/bin/recorder_wrapper.sh start
+    Mod1+Delete exec $HOME/bin/recorder_wrapper.sh stop
+    Mod1+Shift+Insert exec $HOME/bin/recorder_wrapper.sh start -g
 
     # Volume Control
     --locked Mod1+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
