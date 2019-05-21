@@ -59,8 +59,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 bindsym {
-    # Lock screen and set idle time to max
-    Mod1+l exec killall -SIGUSR1 swayidle
+    # Lock screen
+    Mod1+l exec swaylock
 
     # kill focused window
     Mod1+q kill
