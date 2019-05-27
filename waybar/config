@@ -9,7 +9,7 @@
     },
     "custom/power": {
         "format": "",
-        "on-click": "swaynag -b 'shutdown' 'systemctl poweroff' -b 'reboot' 'systemctl reboot' --type poweroff",
+        "on-click": "$HOME/bin/sway-power.sh",
         "tooltip": false
     },
     "tray": {
