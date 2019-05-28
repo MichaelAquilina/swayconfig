@@ -7,6 +7,10 @@
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "disable-bar-scroll": true
+    },
     "custom/power": {
         "format": "",
         "on-click": "$HOME/bin/sway-power.sh",
