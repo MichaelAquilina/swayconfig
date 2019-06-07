@@ -28,8 +28,10 @@
     },
     "custom/power": {
         "format": "",
+        "exec": "echo hello",
         "on-click": "$HOME/bin/sway-power.sh",
-        "tooltip": false
+        "tooltip": false,
+        "interval": "once"
     },
     "tray": {
         "spacing": 10
