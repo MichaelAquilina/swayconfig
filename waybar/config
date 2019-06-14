@@ -3,6 +3,9 @@
     "height": 30,
     "modules-left": [
         "sway/workspaces",
+        "custom/playerctl-previous",
+        "custom/playerctl-playpause",
+        "custom/playerctl-next",
         "custom/playerctl"
     ],
     "modules-center": [
@@ -38,8 +41,28 @@
     },
     "custom/playerctl": {
         "exec": "$HOME/bin/playerbar.sh",
-        "interval": 1,
         "on-click": "playerctl play-pause",
+        "interval": 1,
+        "tooltip": false
+    },
+    "custom/playerctl-previous": {
+        "exec": "playerctl metadata -f '{{artist}}'",
+        "on-click": "playerctl previous",
+        "format": "",
+        "interval": 1,
+        "tooltip": false
+    },
+    "custom/playerctl-playpause": {
+        "exec": "$HOME/bin/playerbar_button.sh",
+        "on-click": "playerctl play-pause",
+        "interval": 1,
+        "tooltip": false
+    },
+    "custom/playerctl-next": {
+        "exec": "playerctl metadata -f '{{artist}}'",
+        "on-click": "playerctl next",
+        "format": "",
+        "interval": 1,
         "tooltip": false
     },
     "clock": {

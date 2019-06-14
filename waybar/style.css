@@ -101,6 +101,24 @@ label:focus {
     padding-right: 10px;
 }
 
+#custom-playerctl-previous {
+    padding-left: 10px;
+    padding-right: 5px;
+    border-bottom: 3px solid #ffffff;
+}
+
+#custom-playerctl-playpause {
+    padding-left: 10px;
+    padding-right: 5px;
+    border-bottom: 3px solid #ffffff;
+}
+
+#custom-playerctl-next {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-bottom: 3px solid #ffffff;
+}
+
 #tray {
     background-color: #2980b9;
 }
