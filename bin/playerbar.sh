@@ -5,6 +5,9 @@ output="$(playerctl metadata -f '[{{status}}]  <b>{{title}}</b> by <i>{{artist}}
 output="$(printf "$output" | sed 's/\[Playing\]//')"
 output="$(printf "$output" | sed 's/\[Paused\]//')"
 
+# Replace & with &amp; to prevent markdown errors
+output="$(printf "$output" | sed 's/\&/\&amp;/')"
+
 if [[ "$output" != "[Stopped]"* ]]; then
     printf "$output"
 else
