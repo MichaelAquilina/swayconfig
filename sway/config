@@ -121,6 +121,7 @@ bindsym {
     Mod1+h split h
     Mod1+v split v
     Mod1+f fullscreen toggle
+    Shift+Mod1+f floating toggle
     Mod1+space focus mode_toggle
     Mod1+a focus parent
     Mod1+c focus child
