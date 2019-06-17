@@ -77,8 +77,8 @@
         "device": "intel_backlight",
         "format": "{percent:3}% {icon}",
         "format-icons": ["", ""],
-        "on-scroll-up": "light -A 2",
-        "on-scroll-down": "light -U 2",
+        "on-scroll-up": "light -A 1",
+        "on-scroll-down": "light -U 1",
         "tooltip": false
     },
     "battery": {
@@ -113,7 +113,7 @@
         },
         "tooltip": false,
         "on-click": "pavucontrol",
-        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%"
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%"
     }
 }
