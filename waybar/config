@@ -111,6 +111,7 @@
             "car": "",
             "default": ["", ""]
         },
+        "interval": 10,
         "tooltip": false,
         "on-click": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
