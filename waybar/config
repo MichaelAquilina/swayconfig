@@ -43,7 +43,7 @@
         "tooltip": false
     },
     "clock": {
-        "interval": 10,
+        "interval": 1,
         "format": "{:%a %e %b %y - %l:%M %p}",
         "format-alt": "{:%a %e %b %y - %R}",
         "tooltip": false
