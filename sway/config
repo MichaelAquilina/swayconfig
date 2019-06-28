@@ -79,11 +79,6 @@ bindsym {
     Shift+Print exec $HOME/bin/grim_wrapper.sh -g
     Print exec  $HOME/bin/grim_wrapper.sh
 
-    # Video recording
-    Mod1+Insert exec $HOME/bin/recorder_wrapper.sh start
-    Mod1+Delete exec $HOME/bin/recorder_wrapper.sh stop
-    Mod1+Shift+Insert exec $HOME/bin/recorder_wrapper.sh start -g
-
     # Volume Control
     --locked Mod1+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
     --locked Mod1+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
