@@ -101,6 +101,9 @@ bindsym {
     --locked XF86AudioPlay exec playerctl play-pause
     --locked XF86AudioNext exec playerctl next
 
+    # Allow enabling main screen
+    --locked Mod1+Insert output eDP-1 enable
+
     # Moving between windows
     Mod1+Left focus left
     Mod1+Down focus down
