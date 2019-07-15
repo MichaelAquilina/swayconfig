@@ -111,5 +111,6 @@ label:focus {
 
 #idle_inhibitor.activated {
     font-weight: bold;
-    border-bottom: 3px solid #ffffff;
+    border-bottom: 3px solid #00ff88;
+    color: #00ff88;
 }
