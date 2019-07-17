@@ -29,10 +29,6 @@ output eDP-1 {
     pos 0 0
 }
 
-output "*" {
-    background "$HOME/Wallpaper.png" fill
-}
-
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
 
