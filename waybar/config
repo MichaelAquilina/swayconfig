@@ -58,12 +58,12 @@
     },
     "cpu": {
         "interval": 1,
-        "format": "{usage:3}% ",
+        "format": "{usage:>3}% ",
         "on-click": "tilix -e htop",
         "tooltip": false
     },
     "memory": {
-        "format": "{:3}% ",
+        "format": "{:>3}% ",
         "on-click": "tilix -e htop",
         "tooltip": false
     },
@@ -75,7 +75,7 @@
     "backlight": {
         "interval": 1,
         "device": "intel_backlight",
-        "format": "{percent:3}% {icon}",
+        "format": "{percent:>3}% {icon}",
         "format-icons": ["", ""],
         "on-scroll-up": "light -A 1",
         "on-scroll-down": "light -U 1",
@@ -86,7 +86,7 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity:3}% {icon}",
+        "format": "{capacity:>3}% {icon}",
         "format-icons": ["", "", "", "", ""],
         "tooltip": false
     },
@@ -99,7 +99,7 @@
         "tooltip": false
     },
     "pulseaudio": {
-        "format": "{volume:3}% {icon}",
+        "format": "{volume:>3}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-muted": "",
         "format-icons": {
