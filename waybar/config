@@ -44,8 +44,8 @@
     },
     "clock": {
         "interval": 1,
-        "format": "{:%a %b %e - %l:%M %p}",
-        "format-alt": "{:%a %b %e - %R}",
+        "format": "{:%a %e %b - %l:%M %p}",
+        "format-alt": "{:%a %e %b - %R}",
         "tooltip": false
     },
     "idle_inhibitor": {
