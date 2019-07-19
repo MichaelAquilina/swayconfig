@@ -29,6 +29,10 @@ output eDP-1 {
     pos 0 0
 }
 
+output * {
+    background #888888 solid_color
+}
+
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
 
