@@ -3,3 +3,7 @@ background-color=#262626
 format=%a\n<b>%s</b>\n%b
 height=200
 width=450
+
+[app-name="Nightly"]
+border-color=#ffcece
+background-color=#662626
