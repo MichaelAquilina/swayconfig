@@ -1,5 +1,5 @@
 default-timeout=7000
 background-color=#262626
-format=<b>%s</b>\n%b
+format=%a\n<b>%s</b>\n%b
 height=200
 width=450
