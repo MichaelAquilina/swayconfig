@@ -1,6 +1,6 @@
 # Use "man 5 sway" to get configuration documentation
 
-font pango:Roboto Sans Mono 10
+font pango:Roboto Mono 10
 
 # notification daemon
 exec mako
@@ -30,7 +30,7 @@ output eDP-1 {
 }
 
 output * {
-    background #888888 solid_color
+   background #AAAAAA solid_color
 }
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
