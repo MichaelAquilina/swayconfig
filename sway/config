@@ -13,8 +13,11 @@ exec kanshi
 exec_always light -N 10
 
 # Auto lock the screen after being idle
+# Known bug: dpms does not turn off correctly when receiving SIGUSR1 signal
+# see https://github.com/swaywm/sway/issues/4357
 exec swayidle -w \
     timeout 300 'swaylock' \
+    timeout 300 'swaymsg "output * dpms off"' \
          resume 'swaymsg "output * dpms on"' \
     before-sleep 'swaylock'
 
@@ -58,8 +61,8 @@ set $ws9 "9"
 set $ws10 "10"
 
 bindsym {
-    # Lock screen
-    Mod1+l exec swaylock
+    # Lock screen be entering the idle state
+    Mod1+l exec killall -SIGUSR1 swayidle
 
     # kill focused window
     Mod1+q kill
