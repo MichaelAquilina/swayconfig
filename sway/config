@@ -6,9 +6,6 @@ font pango:Roboto Mono 10
 exec mako
 exec_always makoctl reload
 
-# Monitor change detection
-exec kanshi
-
 # Set brightness minimum value
 exec_always light -N 10
 
