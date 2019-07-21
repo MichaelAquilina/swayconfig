@@ -64,8 +64,6 @@ bindsym --release {
 }
 
 bindsym {
-
-
     # kill focused window
     Mod1+q kill
 
