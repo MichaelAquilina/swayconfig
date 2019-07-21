@@ -55,11 +55,16 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-bindsym {
+bindsym --release {
     # Lock screen be entering the idle state
-    # Known bug: dpms does not turn off correctly when receiving SIGUSR1 signal
-    # see https://github.com/swaywm/swayidle/issues/35
-    Mod1+l exec sleep 0.1 && killall -SIGUSR1 swayidle
+    # Important that this is executed under bindsym --release AND sleep 0.2
+    # This workaround gives a few milliseconds for the keys on the keyboard to release (alt and L)
+    # before swayidle can detect them as activity and enter the active state again
+    Mod1+l exec sleep 0.2 && killall -SIGUSR1 swayidle
+}
+
+bindsym {
+
 
     # kill focused window
     Mod1+q kill
