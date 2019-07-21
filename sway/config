@@ -10,8 +10,6 @@ exec_always makoctl reload
 exec_always light -N 10
 
 # Auto lock the screen after being idle
-# Known bug: dpms does not turn off correctly when receiving SIGUSR1 signal
-# see https://github.com/swaywm/swayidle/issues/35
 exec swayidle -w \
     timeout 300 'swaylock' \
     timeout 300 'swaymsg "output * dpms off"' \
@@ -59,7 +57,9 @@ set $ws10 "10"
 
 bindsym {
     # Lock screen be entering the idle state
-    Mod1+l exec killall -SIGUSR1 swayidle
+    # Known bug: dpms does not turn off correctly when receiving SIGUSR1 signal
+    # see https://github.com/swaywm/swayidle/issues/35
+    Mod1+l exec sleep 0.1 && killall -SIGUSR1 swayidle
 
     # kill focused window
     Mod1+q kill
