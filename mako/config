@@ -4,6 +4,5 @@ format=%a\n<b>%s</b>\n%b
 height=200
 width=450
 
-[app-name="Nightly"]
-border-color=#ffcece
-background-color=#662626
+[urgency="high"]
+background-color=#ff0000
