@@ -19,3 +19,5 @@ install:
 	ln -sf $$PWD/bin/grim_wrapper.sh $$HOME/bin/grim_wrapper.sh
 	ln -sf $$PWD/bin/recorder_wrapper.sh $$HOME/bin/recorder_wrapper.sh
 	ln -sf $$PWD/bin/sway-power.sh $$HOME/bin/sway-power.sh
+	ln -sf $$PWD/zshrc $$HOME/.zshrc
+	ln -sf $$PWD/nvim/init.vim $$HOME/.config/nvim/init.vim
