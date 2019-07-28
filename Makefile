@@ -13,6 +13,8 @@ install:
 	ln -sf $$PWD/swaylock $$HOME/.config/swaylock
 	rm -rf $$HOME/.config/swaynag
 	ln -sf $$PWD/swaynag $$HOME/.config/swaynag
+	rm -rf $$HOME/.config/termite
+	ln -sf $$PWD/termite $$HOME/.config/termite
 	rm -rf $$HOME/.config/kanshi
 	ln -sf $$PWD/kanshi $$HOME/.config/kanshi
 	ln -sf $$PWD/bin/playerbar.sh $$HOME/bin/playerbar.sh
