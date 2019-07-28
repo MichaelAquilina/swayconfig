@@ -22,3 +22,4 @@ install:
 	ln -sf $$PWD/zshrc $$HOME/.zshrc
 	ln -sf $$PWD/tigrc $$HOME/.tigrc
 	ln -sf $$PWD/nvim/init.vim $$HOME/.config/nvim/init.vim
+	ln -sf $$PWD/dircolors $$HOME/.dircolors
