@@ -2,6 +2,7 @@
     "layer": "top",
     "height": 30,
     "modules-left": [
+        "idle_inhibitor",
         "sway/workspaces",
         "custom/playerctl"
     ],
@@ -9,10 +10,9 @@
         "clock"
     ],
     "modules-right": [
-        "idle_inhibitor",
+        "network",
         "backlight",
         "pulseaudio",
-        "network",
         "cpu",
         "memory",
         "battery",
