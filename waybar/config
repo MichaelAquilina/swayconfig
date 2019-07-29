@@ -40,6 +40,7 @@
         "exec": "$HOME/bin/playerbar.sh",
         "interval": 1,
         "on-click": "playerctl play-pause",
+        "max-length": 1000,
         "tooltip": false
     },
     "clock": {
@@ -96,6 +97,7 @@
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-disconnected": "Disconnected ⚠",
         "on-click": "nm-connection-editor",
+        "max-length": 1000,
         "tooltip": false
     },
     "pulseaudio": {
