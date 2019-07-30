@@ -6,6 +6,9 @@ font pango:Roboto Mono 10
 exec mako
 exec_always makoctl reload
 
+# Gnome policy kit authentication agent
+exec /usr/lib/polkit-gnome-authentication-agent-1
+
 # Set brightness minimum value
 exec_always light -N 10
 
