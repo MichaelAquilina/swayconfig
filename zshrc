@@ -62,7 +62,6 @@ fi
 # show ISO8601 timestamp with history
 alias history="fc -li 1"
 
-# Allow ctrl+left and ctrl+right movement
 bindkey '5D' emacs-backward-word  # ctrl+left
 bindkey '5C' emacs-forward-word   # ctrl+right
 bindkey '^[[H' beginning-of-line  # home key
