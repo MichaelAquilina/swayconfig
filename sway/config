@@ -60,7 +60,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 bindsym --release {
-    # Lock screen be entering the idle state
+    # Lock screen by entering the idle state
     # Important that this is executed under bindsym --release AND sleep 0.2
     # This workaround gives a few milliseconds for the keys on the keyboard to release (alt and L)
     # before swayidle can detect them as activity and enter the active state again
