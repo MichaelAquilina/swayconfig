@@ -219,16 +219,12 @@ alias dcr="docker-compose run --rm"
 alias pm="pygmentize"
 alias xopen="xdg-open"
 alias explore="nautilus"
-alias xcopy="xsel -i -b"
-alias xpaste="xsel -o -b"
-alias xc="xcopy"
-alias xp="xpaste"
+alias xc="xsel -i -b"
 alias md="mkdir"
 
 if [[ -n "$WAYLAND_DISPLAY" ]]; then
     alias xopen="GDK_BACKEND=wayland xdg-open"
-    alias xcopy="wl-copy"
-    alias xpaste="wl-paste"
+    alias xc="wl-copy"
 fi
 
 alias plog='pass git log --pretty="format:%C(bold) %G? %C(cyan) %ai %C(bold yellow)%s"'
