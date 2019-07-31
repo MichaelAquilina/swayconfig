@@ -63,10 +63,12 @@ fi
 alias history="fc -li 1"
 
 # Allow ctrl+left and ctrl+right movement
-bindkey '5D' emacs-backward-word
-bindkey '5C' emacs-forward-word
-bindkey '5B' beginning-of-line
-bindkey '5A' end-of-line
+bindkey '5D' emacs-backward-word  # ctrl+left
+bindkey '5C' emacs-forward-word   # ctrl+right
+bindkey '^[[H' beginning-of-line  # home key
+bindkey '5B' beginning-of-line    # ctrl+down
+bindkey '^[[F' end-of-line        # end key
+bindkey '5A' end-of-line          # ctrl+up
 
 # Use the gnome-keyring-daemon
 if [[ -n "$DESKTOP_SESSION" ]]; then
