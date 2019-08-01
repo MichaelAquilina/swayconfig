@@ -78,12 +78,6 @@ if [[ -n "$DESKTOP_SESSION" ]]; then
     eval `gnome-keyring-daemon -s`
 fi
 
-# Fix VTE Configuration Issues when using Tilix
-# https://github.com/gnunn1/tilix/wiki/VTE-Configuration-Issue#user-content-1-source-vtesh-in-bashrc
-if [[ -n "$TILIX_ID" ]]; then
-  source /etc/profile.d/vte.sh
-fi
-
 if [[ -f ~/.github ]]; then
   export GITHUB_TOKEN="$(<~/.github)"
 fi
