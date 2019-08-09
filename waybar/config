@@ -60,12 +60,12 @@
     "cpu": {
         "interval": 1,
         "format": "{usage:>3}% ",
-        "on-click": "tilix -e htop",
+        "on-click": "alacritty -e htop",
         "tooltip": false
     },
     "memory": {
         "format": "{:>3}% ",
-        "on-click": "tilix -e htop",
+        "on-click": "alacritty -e htop",
         "tooltip": false
     },
     "temperature": {
@@ -96,7 +96,7 @@
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         "format-disconnected": "Disconnected ⚠",
-        "on-click": "nmtui",
+        "on-click": "alacritty -e nmtui",
         "max-length": 1000,
         "tooltip": false
     },
