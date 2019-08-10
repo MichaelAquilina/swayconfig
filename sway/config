@@ -32,7 +32,7 @@ output eDP-1 {
 }
 
 output * {
-   background #AAAAAA solid_color
+    background ~/.backgrounds/oeden.jpg fill
 }
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
