@@ -151,6 +151,9 @@ function whatismyip() {
 #         ALIASES          #
 ############################
 
+# Needed for alacritty to work correctly with ssh
+alias ssh="TERM="xterm-256color" ssh"
+
 alias todo="tro board -n todo"
 alias work="tro board -n work"
 
