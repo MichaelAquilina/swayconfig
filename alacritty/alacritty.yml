@@ -299,7 +299,9 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+
+  # Omit to allow terminals to switch back and forth (e.g. neovim)
+  # style: Block
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
