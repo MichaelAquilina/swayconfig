@@ -141,6 +141,7 @@ bindsym {
     Mod1+8 workspace $ws8
     Mod1+9 workspace $ws9
     Mod1+0 workspace $ws10
+    Mod1+tab workspace back_and_forth
 
     # move focused container to workspace
     Mod1+Shift+1 move container to workspace number $ws1
