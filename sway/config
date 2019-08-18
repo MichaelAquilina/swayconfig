@@ -20,7 +20,7 @@ exec swayidle -w \
     before-sleep 'swaylock'
 
 for_window [app_id=".*"] inhibit_idle fullscreen
-for_window [class_id=".*"] inhibit_idle fullscreen
+for_window [class=".*"] inhibit_idle fullscreen
 
 bar {
     swaybar_command waybar
