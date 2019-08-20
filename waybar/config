@@ -90,6 +90,7 @@
         "format": "{capacity:>3}% {icon}",
         "format-charging": "{capacity:>3}%  {icon}",
         "format-icons": ["", "", "", "", ""],
+        "on-click": "gnome-power-statistics",
         "tooltip": false
     },
     "network": {
