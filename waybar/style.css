@@ -61,10 +61,22 @@ window#waybar.hidded {
 #battery {
 }
 
-#battery.charging {
+@keyframes blink_charging {
+    to {
+        color: #33ff33;
+    }
 }
 
-@keyframes blink {
+#battery.charging {
+    color: #ffffff;
+    animation-name: blink_charging;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink_critcal {
     to {
         color: #ff0000;
     }
@@ -72,7 +84,7 @@ window#waybar.hidded {
 
 #battery.critical:not(.charging) {
     color: #ffffff;
-    animation-name: blink;
+    animation-name: blink_critcal;
     animation-duration: 0.3s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
