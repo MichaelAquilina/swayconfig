@@ -63,7 +63,7 @@ window#waybar.hidded {
 
 @keyframes blink_charging {
     to {
-        color: #33ff33;
+        color: #99ff99;
     }
 }
 
