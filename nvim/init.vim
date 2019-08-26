@@ -52,6 +52,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot' " Add syntax highlighting for all popular languages
 Plug 'MichaelAquilina/Dockerfile.vim', {'branch': 'fix_spellcheck'}
 Plug 'tpope/vim-markdown'
+Plug 'MichaelAquilina/sway-vim-syntax', {'branch': 'fix_spellcheck'}
+
 " Disable markdown in polyglot to use vim-markdown and enable code block
 " highlighting
 let g:polyglot_disabled = ['md', 'markdown', 'Dockerfile']
