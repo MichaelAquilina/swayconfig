@@ -49,14 +49,13 @@ Plug 'christoomey/vim-system-copy'
 Plug 'neomake/neomake'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'sheerun/vim-polyglot' " Add syntax highlighting for all popular languages
-Plug 'MichaelAquilina/Dockerfile.vim', {'branch': 'fix_spellcheck'}
+Plug 'MichaelAquilina/vim-polyglot' " Add syntax highlighting for all popular languages
 Plug 'tpope/vim-markdown'
 Plug 'MichaelAquilina/sway-vim-syntax', {'branch': 'fix_spellcheck'}
 
 " Disable markdown in polyglot to use vim-markdown and enable code block
 " highlighting
-let g:polyglot_disabled = ['md', 'markdown', 'Dockerfile']
+let g:polyglot_disabled = ['md', 'markdown']
 let g:markdown_fenced_languages = ['python', 'html', 'css', 'scss', 'sql', 'javascript', 'go', 'python', 'bash=sh', 'c', 'ruby']
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter' " Shows git changes near line numbers
