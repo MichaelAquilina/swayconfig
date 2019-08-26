@@ -51,7 +51,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'MichaelAquilina/vim-polyglot' " Add syntax highlighting for all popular languages
 Plug 'tpope/vim-markdown'
-Plug 'MichaelAquilina/sway-vim-syntax', {'branch': 'fix_spellcheck'}
+Plug 'terminalnode/sway-vim-syntax'
 
 " Disable markdown in polyglot to use vim-markdown and enable code block
 " highlighting
