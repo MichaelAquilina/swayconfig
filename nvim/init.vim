@@ -49,7 +49,8 @@ Plug 'christoomey/vim-system-copy'
 Plug 'neomake/neomake'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'MichaelAquilina/vim-polyglot' " Add syntax highlighting for all popular languages
+" Add syntax highlighting for all popular languages
+Plug 'MichaelAquilina/vim-polyglot', {'branch': 'fix_spellcheck_dockerfile'}
 Plug 'tpope/vim-markdown'
 Plug 'terminalnode/sway-vim-syntax'
 
