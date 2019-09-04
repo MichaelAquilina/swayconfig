@@ -133,7 +133,6 @@ let g:github_enterprise_urls = ['https://git.lystit.com']
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>ev :edit $MYVIMRC<cr>
 nnoremap <leader>ez :edit ~/.zshrc<cr>
-nnoremap <leader>ei :edit ~/.config/i3/config<cr>
 nnoremap <leader>es :edit ~/.config/sway/config<cr>
 nnoremap <leader>ew :edit ~/.config/waybar/config<cr>
 nnoremap <leader>em :edit ~/.config/mako/config<cr>
