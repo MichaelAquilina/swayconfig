@@ -28,13 +28,9 @@ bar {
     swaybar_command waybar
 }
 
-# Dell Laptop screen
-output eDP-1 {
-    disable
-}
-
-output * {
-}
+# Workaround kanshi bug where reloading sway config
+# doesn't cause kanshi to re-apply it's own configuration
+exec_always killall kanshi; kanshi
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
