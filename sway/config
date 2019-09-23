@@ -104,7 +104,7 @@ bindsym {
     Mod1+d exec GDK_BACKEND="wayland" rofi -show drun -modi "drun"
     Mod1+b exec GDK_BACKEND="wayland" /opt/mozilla/firefox/firefox
     Mod1+p exec rofi-pass
-    Mod1+Return exec alacritty
+    Mod1+Return exec kitty
     Mod1+i exec nautilus
 
     # Screenshots

@@ -136,7 +136,7 @@ nnoremap <leader>ez :edit ~/.zshrc<cr>
 nnoremap <leader>es :edit ~/.config/sway/config<cr>
 nnoremap <leader>ew :edit ~/.config/waybar/config<cr>
 nnoremap <leader>em :edit ~/.config/mako/config<cr>
-nnoremap <leader>et :edit ~/.config/alacritty/alacritty.yml<cr>
+nnoremap <leader>et :edit ~/.config/kitty/kitty.conf<cr>
 
 " Quickly move lines up and down
 nnoremap - ddp

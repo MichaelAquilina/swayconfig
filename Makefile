@@ -13,8 +13,8 @@ install:
 	ln -sf $$PWD/swaylock $$HOME/.config/swaylock
 	rm -rf $$HOME/.config/swaynag
 	ln -sf $$PWD/swaynag $$HOME/.config/swaynag
-	rm -rf $$HOME/.config/alacritty
-	ln -sf $$PWD/alacritty $$HOME/.config/alacritty
+	rm -rf $$HOME/.config/kitty
+	ln -sf $$PWD/kitty $$HOME/.config/kitty
 	rm -rf $$HOME/.config/kanshi
 	ln -sf $$PWD/kanshi $$HOME/.config/kanshi
 	ln -sf $$PWD/bin/playerbar.sh $$HOME/bin/playerbar.sh
