@@ -67,29 +67,29 @@ bindsym --release {
 
 bindsym --locked {
     # Volume Control
-     Mod1+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-     Mod1+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-     Mod1+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    Mod1+F3 exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    Mod1+F2 exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    Mod1+F1 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-     XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-     XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-     XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+    XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+    XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+    XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
     # Brightness Controls
-     XF86MonBrightnessUp exec light -A 10
-     XF86MonBrightnessDown exec light -U 10
+    XF86MonBrightnessUp exec light -A 10
+    XF86MonBrightnessDown exec light -U 10
 
     # Media Controls
-     Mod1+F5 exec playerctl previous
-     Mod1+F6 exec playerctl play-pause
-     Mod1+F7 exec playerctl next
+    Mod1+F5 exec playerctl previous
+    Mod1+F6 exec playerctl play-pause
+    Mod1+F7 exec playerctl next
 
-     XF86AudioPrev exec playerctl previous
-     XF86AudioPlay exec playerctl play-pause
-     XF86AudioNext exec playerctl next
+    XF86AudioPrev exec playerctl previous
+    XF86AudioPlay exec playerctl play-pause
+    XF86AudioNext exec playerctl next
 
     # Allow enabling main screen
-     Mod1+Insert output eDP-1 toggle scale 2.0
+    Mod1+Insert output eDP-1 toggle scale 2.0
 }
 
 bindsym {
