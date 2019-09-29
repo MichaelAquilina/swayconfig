@@ -27,5 +27,5 @@ echo "$password" | head -1 | nohup wl-copy -p -r --paste-once 2>/dev/null
 
 notify-send --app-name=password-store \
 " " \
-"Copied <b>$result</b> to clipboard
+"Copied <b>$result</b> to clipboard 🔑
 Password will only paste ONCE"
