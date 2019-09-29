@@ -25,6 +25,8 @@ for_window [class="zoom"] inhibit_idle visible
 
 for_window [class="zoom"] floating enable
 
+for_window [app_id="KittyPopup"] floating enable
+
 bar {
     swaybar_command waybar
 }
@@ -103,7 +105,7 @@ bindsym {
     # Force GDK Backend for all applications that launch
     Mod1+d exec GDK_BACKEND="wayland" rofi -show drun -modi "drun"
     Mod1+b exec GDK_BACKEND="wayland" firefox
-    Mod1+p exec rofi-pass
+    Mod1+p exec kitty --class "KittyPopup" $HOME/bin/lofi.sh
     Mod1+Return exec kitty
     Mod1+i exec nautilus
 
