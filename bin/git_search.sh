@@ -10,4 +10,4 @@ list_directories() {
 
 result="$HOME/$(list_directories | fzf --reverse --prompt "Git Project> ")"
 
-kitty --directory "$result" --detach
+kitty --directory "$result" --detach nvim
