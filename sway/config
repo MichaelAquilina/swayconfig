@@ -107,6 +107,7 @@ bindsym {
     Mod1+b exec GDK_BACKEND="wayland" firefox
     Mod1+Return exec kitty
     Mod1+p exec kitty --class "KittyPopup" "$HOME/bin/lofi.sh"
+    Mod1+j exec kitty --class "KittyPopup" "$HOME/bin/git_search.sh"
     Mod1+i exec nautilus
 
     # Screenshots
