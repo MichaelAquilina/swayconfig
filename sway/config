@@ -33,9 +33,14 @@ bar {
     swaybar_command waybar
 }
 
-# Workaround kanshi bug where reloading sway config
-# doesn't cause kanshi to re-apply it's own configuration
-exec_always killall kanshi; kanshi
+# By default disable inbuilt monitor. Turn on using alt+insert if needed
+output eDP-1 {
+    disable
+}
+
+output DP-1 {
+    scale 1.0
+}
 
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier Mod1
