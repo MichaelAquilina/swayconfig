@@ -85,6 +85,7 @@ set laststatus=2
 set statusline=
 set statusline+=%f
 set statusline+=%=
+set statusline+=\ %l:%c
 set statusline+=\ %y
 set statusline+=\ %{b:gitbranch}
 
