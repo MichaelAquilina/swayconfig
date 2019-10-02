@@ -243,6 +243,11 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.rvm/bin:$PATH"
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "/opt/google/google-cloud-sdk/path.zsh.inc" ]; then . "/opt/google/google-cloud-sdk/path.zsh.inc"; fi
+# The next line enables shell command completion for gcloud.
+if [ -f "/opt/google/google-cloud-sdk/completion.zsh.inc" ]; then . "/opt/google/google-cloud-sdk/completion.zsh.inc"; fi
+
 # Leave as last command to prevent weird issues with PATH when
 # changing environments
 zplug load
@@ -262,12 +267,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_DIR_SHORTEN_STRATEGY="dir"
 POWERLEVEL9K_DIR_SHORTEN_LENGTH=2
 POWERLEVEL9K_VIRTUALENV_BACKGROUND="cyan"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 t1=$(date "+%s.%N")
 printf "Profile took %.3f seconds to load\n" $((t1-t0))
