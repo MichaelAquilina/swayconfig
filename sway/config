@@ -33,6 +33,10 @@ bar {
     swaybar_command waybar
 }
 
+output * {
+    background $HOME/backgrounds/darksouls.jpg fill
+}
+
 # By default disable inbuilt monitor. Turn on using alt+insert if needed
 output eDP-1 {
     disable
