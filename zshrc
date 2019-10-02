@@ -233,6 +233,9 @@ export MANPAGER="nvim -c 'set ft=man' -"
 
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git'"
 
+# Set default web browser to copy of firefox.desktop with GDK_BACKED=wayland flag
+xdg-settings set default-web-browser firefox-wayland.desktop
+
 fpath+=~/.zfunc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
