@@ -65,7 +65,7 @@ def get_all_desktop_entries() -> dict:
 def get_executable(value: str) -> List[str]:
     result = []
     for token in value.split(" "):
-        if token not in ("%s", "%u"):
+        if token not in ("%s", "%u", "%f"):
             result.append(token)
     return result
 
