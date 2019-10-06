@@ -7,67 +7,11 @@ import subprocess
 from typing import List
 
 
+# TODO: How to detect flatpak desktop applications?
 DESKTOP_DIRECTORIES = [
     "/usr/share/applications/",
     os.path.expanduser("~/.local/share/applications"),
 ]
-
-
-def fzf_exists() -> bool:
-    return shutil.which("fzf") != None
-
-
-def get_desktop(path: str) -> dict:
-    required_fields = ["Name", "Exec", "Terminal", "NoDisplay", "Comment"]
-
-    # It's actually faster reading data all at once
-    # Then iterating through the lines and breaking early
-    with open(path, "r") as fp:
-        data = fp.readlines()
-
-    # Include for potential debugging purposes
-    result = {"_path": path}
-    for line in data:
-        if "=" not in line:
-            continue
-
-        tokens = line.split("=")
-        field = tokens[0]
-        value = "=".join(tokens[1:])
-
-        # Only bother populating the fields that matter
-        if field in required_fields:
-           result[field] = value.rstrip("\n")
-
-        if result.keys() == required_fields:
-            break
-
-    return result
-
-
-def get_all_desktop_entries() -> dict:
-    desktop_entries = {}
-    for directory in DESKTOP_DIRECTORIES:
-        for root, dirs, files in os.walk(directory):
-            for entry in files:
-                if not entry.endswith(".desktop"):
-                    continue
-
-                desktop = get_desktop(os.path.join(root, entry))
-
-                name = desktop.get("Name", "")
-                no_display = desktop.get("NoDisplay") == "true"
-                if name and not no_display:
-                    desktop_entries[name] = desktop
-    return desktop_entries
-
-
-def get_executable(value: str) -> List[str]:
-    result = []
-    for token in value.split(" "):
-        if token not in ("%s", "%u", "%f"):
-            result.append(token)
-    return result
 
 
 def main() -> None:
@@ -117,6 +61,63 @@ def main() -> None:
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
         )
+
+
+def fzf_exists() -> bool:
+    return shutil.which("fzf") != None
+
+
+def get_all_desktop_entries() -> dict:
+    desktop_entries = {}
+    for directory in DESKTOP_DIRECTORIES:
+        for root, dirs, files in os.walk(directory):
+            for entry in files:
+                if not entry.endswith(".desktop"):
+                    continue
+
+                desktop = get_desktop(os.path.join(root, entry))
+
+                name = desktop.get("Name", "")
+                no_display = desktop.get("NoDisplay") == "true"
+                if name and not no_display:
+                    desktop_entries[name] = desktop
+    return desktop_entries
+
+
+def get_desktop(path: str) -> dict:
+    required_fields = ["Name", "Exec", "Terminal", "NoDisplay", "Comment"]
+
+    # It's actually faster reading data all at once
+    # Then iterating through the lines and breaking early
+    with open(path, "r") as fp:
+        data = fp.readlines()
+
+    # Include for potential debugging purposes
+    result = {"_path": path}
+    for line in data:
+        if "=" not in line:
+            continue
+
+        tokens = line.split("=")
+        field = tokens[0]
+        value = "=".join(tokens[1:])
+
+        # Only bother populating the fields that matter
+        if field in required_fields:
+           result[field] = value.rstrip("\n")
+
+        if result.keys() == required_fields:
+            break
+
+    return result
+
+
+def get_executable(value: str) -> List[str]:
+    result = []
+    for token in value.split(" "):
+        if token not in ("%s", "%u", "%f"):
+            result.append(token)
+    return result
 
 
 if __name__ == "__main__":
