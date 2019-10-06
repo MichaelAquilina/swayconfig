@@ -15,7 +15,7 @@ DESKTOP_DIRECTORIES = [
 
 
 def main() -> None:
-    if not fzf_exists():
+    if not command_exists("fzf"):
         print("fzf is not installed or is not in your $PATH")
         return
 
@@ -63,8 +63,8 @@ def main() -> None:
         )
 
 
-def fzf_exists() -> bool:
-    return shutil.which("fzf") != None
+def command_exists(command: str) -> bool:
+    return shutil.which(command) != None
 
 
 def get_all_desktop_entries() -> dict:
@@ -79,13 +79,18 @@ def get_all_desktop_entries() -> dict:
 
                 name = desktop.get("Name", "")
                 no_display = desktop.get("NoDisplay") == "true"
+                try_exec = desktop.get("TryExec")
+
+                if try_exec and not command_exists(try_exec):
+                    continue
+
                 if name and not no_display:
                     desktop_entries[name] = desktop
     return desktop_entries
 
 
 def get_desktop(path: str) -> dict:
-    required_fields = ["Name", "Exec", "Terminal", "NoDisplay", "Comment"]
+    required_fields = ["Name", "Exec", "TryExec", "Terminal", "NoDisplay", "Comment"]
 
     # It's actually faster reading data all at once
     # Then iterating through the lines and breaking early
