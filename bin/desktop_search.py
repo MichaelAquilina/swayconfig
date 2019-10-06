@@ -64,19 +64,20 @@ def main() -> None:
     executable = get_executable(target["Exec"])
     terminal = target.get("Terminal") == "true"
 
+    # We need nohup to prevent terminal from remaining open
+    # TODO: There might be a more direct way of doing this in python
     if terminal:
         # TODO: This should pick up the default terminal application
-        launcher = "kitty"
+        launcher = ["nohup", "kitty"]
     else:
-        # We need nohup to prevent terminal from remaining open
-        # TODO: There might be a more direct way of doing this in python
-        launcher = "nohup"
+
+        launcher = ["nohup"]
 
     if options.debug is True:
         print(target)
     else:
         subprocess.Popen(
-            [launcher] + executable,
+            launcher + executable,
             start_new_session=True,
             close_fds=True,
             stdout=subprocess.DEVNULL,
