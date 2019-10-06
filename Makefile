@@ -24,6 +24,7 @@ install:
 	ln -sf $$PWD/bin/sway-power.sh $$HOME/bin/sway-power.sh
 	ln -sf $$PWD/bin/lofi.sh $$HOME/bin/lofi.sh
 	ln -sf $$PWD/bin/git_project.sh $$HOME/bin/git_project.sh
+	ln -sf $$PWD/bin/desktop_search.py $$HOME/bin/desktop_search.py
 	ln -sf $$PWD/zshrc $$HOME/.zshrc
 	ln -sf $$PWD/tigrc $$HOME/.tigrc
 	ln -sf $$PWD/nvim/init.vim $$HOME/.config/nvim/init.vim
