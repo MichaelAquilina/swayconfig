@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 
+import argparse
 import os
 import re
 import shutil
@@ -15,22 +16,41 @@ DESKTOP_DIRECTORIES = [
 ]
 
 
+def fzf_launch_options() -> List[str]:
+    desktop_search_path = os.path.realpath(__file__)
+    return [
+        "fzf",
+        "--reverse",
+        "--prompt", "Run> ",
+        "--preview", f"{desktop_search_path} --preview {{}}",
+        "--preview-window=bottom:1",
+    ]
+
+
 def main() -> None:
     if not command_exists("fzf"):
         print("fzf is not installed or is not in your $PATH")
         return
 
-    debug = False
-    if len(sys.argv) > 1 and sys.argv[1] == "--debug":
-        debug = True
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--debug", action="store_true", default=False)
+    parser.add_argument("--preview", required=False)
+
+    options = parser.parse_args()
 
     desktop_entries = get_all_desktop_entries()
+
+    # Because fzf only knows the Name we are displaying, we need to rely on this
+    # same script to map the name back to the correct desktop entry and print its comment
+    if options.preview:
+        print(desktop_entries[options.preview].get("Comment", ""))
+        return
 
     # Data to feed to fzf
     data = "\n".join(sorted(desktop_entries.keys()))
 
     result = subprocess.run(
-        ["fzf", "--reverse", "--prompt", "Run> "],
+        fzf_launch_options(),
         stdout=subprocess.PIPE,
         encoding="utf8",
         input=data,
@@ -52,7 +72,7 @@ def main() -> None:
         # TODO: There might be a more direct way of doing this in python
         launcher = "nohup"
 
-    if debug is True:
+    if options.debug is True:
         print(target)
     else:
         subprocess.Popen(
