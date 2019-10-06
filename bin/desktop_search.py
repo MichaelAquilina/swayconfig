@@ -157,7 +157,7 @@ def get_executable(value: str) -> List[str]:
     result = []
     for token in value.split(" "):
         if token not in FIELD_CODES:
-            result.append(token)
+            result.append(token.strip('"'))
     return result
 
 
