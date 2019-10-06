@@ -105,7 +105,7 @@ def main() -> None:
     else:
         # We need nohup to prevent terminal from remaining open
         # TODO: There might be a more direct way of doing this in python
-        launcher = "htop"
+        launcher = "nohup"
 
     if debug is True:
         print(target)
