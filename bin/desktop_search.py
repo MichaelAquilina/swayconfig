@@ -9,11 +9,14 @@ import subprocess
 from typing import List
 
 
-# TODO: How to detect flatpak desktop applications?
-DESKTOP_DIRECTORIES = [
-    "/usr/share/applications/",
-    os.path.expanduser("~/.local/share/applications"),
-]
+def get_data_dirs() -> List[str]:
+    xdg_data_dirs = os.environ["XDG_DATA_DIRS"].split(":")
+
+    result = [os.path.expanduser("~/.local/share/applications")]
+    for path in xdg_data_dirs:
+        result.append(os.path.join(path, "applications"))
+
+    return result
 
 
 def fzf_launch_options() -> List[str]:
@@ -38,7 +41,8 @@ def main() -> None:
 
     options = parser.parse_args()
 
-    desktop_entries = get_all_desktop_entries()
+    data_dirs = get_data_dirs()
+    desktop_entries = get_all_desktop_entries(data_dirs)
 
     # Because fzf only knows the Name we are displaying, we need to rely on this
     # same script to map the name back to the correct desktop entry and print its comment
@@ -89,9 +93,9 @@ def command_exists(command: str) -> bool:
     return shutil.which(command) != None
 
 
-def get_all_desktop_entries() -> dict:
+def get_all_desktop_entries(data_dirs: List[str]) -> dict:
     desktop_entries = {}
-    for directory in DESKTOP_DIRECTORIES:
+    for directory in data_dirs:
         for root, dirs, files in os.walk(directory):
             for entry in files:
                 if not entry.endswith(".desktop"):
