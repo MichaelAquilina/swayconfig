@@ -112,10 +112,18 @@ def get_desktop(path: str) -> dict:
     return result
 
 
+# These are special freedesktop defined parameters which we need to remove
+# as we are not launching them in any special way (e.g. using a target file)
+# see https://developer.gnome.org/desktop-entry-spec/#exec-variables
+FIELD_CODES = [
+    "%s", "%u", "%U", "%f", "%F", "%d", "%D", "%n", "%N", "%i", "%c", "%k", "%v", "%m"
+]
+
+
 def get_executable(value: str) -> List[str]:
     result = []
     for token in value.split(" "):
-        if token not in ("%s", "%u", "%f"):
+        if token not in FIELD_CODES:
             result.append(token)
     return result
 
