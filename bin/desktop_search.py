@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 import os
+import re
 import shutil
 import sys
 import subprocess
@@ -90,7 +91,7 @@ def get_all_desktop_entries() -> dict:
 
 
 def get_desktop(path: str) -> dict:
-    required_fields = ["Name", "Exec", "TryExec", "Terminal", "NoDisplay", "Comment"]
+    required_fields = ["Name", "Exec", "TryExec", "Terminal", "NoDisplay", "Comment", "_path"]
 
     # It's actually faster reading data all at once
     # Then iterating through the lines and breaking early
@@ -99,7 +100,13 @@ def get_desktop(path: str) -> dict:
 
     # Include for potential debugging purposes
     result = {"_path": path}
-    for line in data:
+
+    # Skip first line containing [Desktop Entry]
+    for line in data[1:]:
+        # Finding any new section means we should stop
+        if re.match(r"\[.+\]", line):
+            break
+
         if "=" not in line:
             continue
 
