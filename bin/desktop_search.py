@@ -110,7 +110,16 @@ def get_all_desktop_entries(data_dirs: List[str]) -> dict:
                 if try_exec and not command_exists(try_exec):
                     continue
 
-                if name and not no_display:
+                # If name has already been populated, then it
+                # should have the highest priority
+                if name in desktop_entries:
+                    continue
+
+                # No display means it should never show in launchers
+                if no_display:
+                    continue
+
+                if name:
                     desktop_entries[name] = desktop
     return desktop_entries
 
