@@ -1,6 +1,0 @@
-rofi.theme: /usr/share/rofi/themes/Arc-Dark.rasi
-rofi.dpi: 0
-rofi.levenshtein-sort: false
-rofi.matching: fuzzy
-rofi.sort: false
-rofi.sorting-method: fzf
