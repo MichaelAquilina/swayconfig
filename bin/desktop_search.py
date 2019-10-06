@@ -82,7 +82,7 @@ def main() -> None:
     desktop_entries = get_all_desktop_entries()
 
     # Data to feed to fzf
-    data = "\n".join(desktop_entries.keys())
+    data = "\n".join(sorted(desktop_entries.keys()))
 
     result = subprocess.run(
         ["fzf", "--reverse", "--prompt", "Run> "],
