@@ -15,6 +15,6 @@ Actions=PrivateBrowsing;
 
 [Desktop Action PrivateBrowsing]
 Name=New Private Browsing Window
-Exec=firefox --private-window %u
+Exec=env MOZ_ENABLE_WAYLAND=true firefox --private-window %u
 
 MimeType=x-scheme-handler/unknown;x-scheme-handler/about;text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;application/x-xpinstall;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
