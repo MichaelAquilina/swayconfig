@@ -114,7 +114,7 @@ bindsym {
     Mod1+m exec makoctl dismiss
 
     # Force GDK Backend for all applications that launch
-    Mod1+b exec GDK_BACKEND="wayland" firefox
+    Mod1+b exec MOZ_ENABLE_WAYLAND="wayland" firefox
     Mod1+Return exec kitty
     Mod1+p exec kitty --class "KittyPopup" "$HOME/bin/lofi.sh"
     Mod1+j exec kitty --class "KittyPopup" "$HOME/bin/git_project.sh"
