@@ -222,8 +222,12 @@ export MANPAGER="nvim -c 'set ft=man' -"
 
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!.git'"
 
-# Set default web browser to copy of firefox.desktop with GDK_BACKED=wayland flag
-xdg-settings set default-web-browser firefox-wayland.desktop
+local DEFAULT_WEB_BROWSER="firefox-wayland.desktop"
+
+# Check before setting. This is because setting is slow
+if [[ "$(xdg-settings get default-web-browser)" != "$DEFAULT_WEB_BROWSER" ]]; then
+    xdg-settings set default-web-browser "$DEFAULT_WEB_BROWSER"
+fi
 
 fpath+=~/.zfunc
 
