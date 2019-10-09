@@ -77,10 +77,6 @@ if [[ -n "$DESKTOP_SESSION" ]]; then
     eval `gnome-keyring-daemon -s 2>/dev/null`
 fi
 
-if [[ -f ~/.github ]]; then
-  export GITHUB_TOKEN="$(<~/.github)"
-fi
-
 # Use NeoVim if available
 if type "nvim" >/dev/null; then
   alias vim=nvim
@@ -150,12 +146,6 @@ function whatismyip() {
 #         ALIASES          #
 ############################
 
-# Needed for alacritty to work correctly with ssh
-alias ssh="TERM="xterm-256color" ssh"
-
-alias todo="tro board -n todo"
-alias work="tro board -n work"
-
 alias h="history"
 alias -g NE="2>/dev/null"
 
@@ -223,7 +213,6 @@ alias xc="xsel -i -b"
 alias md="mkdir"
 
 if [[ -n "$WAYLAND_DISPLAY" ]]; then
-    alias xopen="GDK_BACKEND=wayland xdg-open"
     alias xc="wl-copy"
 fi
 
@@ -260,11 +249,10 @@ zplug load
 
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export AUTO_NOTIFY_THRESHOLD=8
-AUTO_NOTIFY_IGNORE+=("emp" "ipython")
+AUTO_NOTIFY_IGNORE+=("ipython")
 export YSU_MESSAGE_POSITION="after"
 export HISTORY_FILTER_EXCLUDE=("_KEY" "Authorization: ", "_TOKEN")
 export AUTOSWITCH_DEFAULT_PYTHON="/usr/bin/python3"
-export AUTOSWITCH_DEFAULT_REQUIREMENTS="$HOME/.requirements.txt"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status dir vcs dir_writable)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_DIR_SHORTEN_STRATEGY="dir"
