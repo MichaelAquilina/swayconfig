@@ -2,9 +2,6 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-" Prevent ^M from being pasted in
-" see https://github.com/vim/vim/issues/1404
-set t_BE=
 filetype indent on
 filetype off
 set autoindent
