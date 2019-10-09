@@ -10,8 +10,13 @@ from typing import List
 
 
 def get_data_dirs() -> List[str]:
+    """
+    Returns list of application data dirs that contain .desktop files.
+    List is ordered by priority in descending order
+    """
     xdg_data_dirs = os.environ["XDG_DATA_DIRS"].split(":")
 
+    # local applications directory should take highest priority
     result = [os.path.expanduser("~/.local/share/applications")]
     for path in xdg_data_dirs:
         result.append(os.path.join(path, "applications"))
