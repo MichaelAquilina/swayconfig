@@ -99,6 +99,9 @@ def command_exists(command: str) -> bool:
 
 
 def get_all_desktop_entries(data_dirs: List[str]) -> dict:
+    GLYPH_COMMAND="  "
+    GLYPH_DESKTOP="  "
+
     desktop_entries = {}
     for directory in data_dirs:
         for root, dirs, files in os.walk(directory):
@@ -111,6 +114,12 @@ def get_all_desktop_entries(data_dirs: List[str]) -> dict:
                 name = desktop.get("Name", "")
                 no_display = desktop.get("NoDisplay") == "true"
                 try_exec = desktop.get("TryExec")
+                terminal = desktop.get("Terminal") == "true"
+
+                if terminal:
+                    name = GLYPH_COMMAND + name
+                else:
+                    name = GLYPH_DESKTOP + name
 
                 if try_exec and not command_exists(try_exec):
                     continue
