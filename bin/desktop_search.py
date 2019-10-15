@@ -99,8 +99,15 @@ def command_exists(command: str) -> bool:
 
 
 def get_all_desktop_entries(data_dirs: List[str]) -> dict:
-    GLYPH_COMMAND="  "
-    GLYPH_DESKTOP="  "
+    GLYPH_MAP = {
+        "Terminal": "  ",
+        "WebBrowser": "  ",
+        "Game": "  ",
+        "Security": "  ",
+        "Graphics": "  ",
+        "System": "  ",
+        "Default": "  ",
+    }
 
     desktop_entries = {}
     for directory in data_dirs:
@@ -114,12 +121,9 @@ def get_all_desktop_entries(data_dirs: List[str]) -> dict:
                 name = desktop.get("Name", "")
                 no_display = desktop.get("NoDisplay") == "true"
                 try_exec = desktop.get("TryExec")
+                desktop_type = desktop.get("Type", "Application")
                 terminal = desktop.get("Terminal") == "true"
-
-                if terminal:
-                    name = GLYPH_COMMAND + name
-                else:
-                    name = GLYPH_DESKTOP + name
+                categories = desktop.get("Categories", "").split(";")
 
                 if try_exec and not command_exists(try_exec):
                     continue
@@ -130,16 +134,36 @@ def get_all_desktop_entries(data_dirs: List[str]) -> dict:
                     continue
 
                 # No display means it should never show in launchers
-                if no_display:
+                if no_display or not name:
                     continue
 
-                if name:
-                    desktop_entries[name] = desktop
+                if terminal:
+                    key = "Terminal"
+                else:
+                    for category in categories:
+                        if category in GLYPH_MAP:
+                            key = category
+                            break
+                    else:
+                        key = "Default"
+
+                name = GLYPH_MAP[key] + name
+                desktop_entries[name] = desktop
     return desktop_entries
 
 
 def get_desktop(path: str) -> dict:
-    required_fields = ["Name", "Exec", "TryExec", "Terminal", "NoDisplay", "Comment", "_path"]
+    required_fields = [
+        "Name",
+        "Categories",
+        "Exec",
+        "TryExec",
+        "Terminal",
+        "NoDisplay",
+        "Comment",
+        "Type",
+        "_path"
+    ]
 
     # It's actually faster reading data all at once
     # Then iterating through the lines and breaking early
