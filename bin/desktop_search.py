@@ -100,13 +100,16 @@ def command_exists(command: str) -> bool:
 
 def get_all_desktop_entries(data_dirs: List[str]) -> dict:
     GLYPH_MAP = {
-        "Terminal": "  ",
+        "TerminalEmulator": "  ",
+        "Monitor": "  ",
         "WebBrowser": "  ",
+        "InstantMessaging": "  ",
         "Game": "  ",
         "Security": "  ",
         "Graphics": "  ",
         "System": "  ",
         "TextEditor": "  ",
+        "Player": "  ",
         "Network": "  ",
         "Default": "  ",
     }
@@ -139,15 +142,12 @@ def get_all_desktop_entries(data_dirs: List[str]) -> dict:
                 if no_display or not name:
                     continue
 
-                if terminal:
-                    key = "Terminal"
+                for category in categories[::-1]:
+                    if category in GLYPH_MAP:
+                        key = category
+                        break
                 else:
-                    for category in categories[::-1]:
-                        if category in GLYPH_MAP:
-                            key = category
-                            break
-                    else:
-                        key = "Default"
+                    key = "Default"
 
                 name = GLYPH_MAP[key] + name
                 desktop_entries[name] = desktop
