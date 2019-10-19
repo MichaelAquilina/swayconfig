@@ -142,7 +142,7 @@ def get_all_desktop_entries(data_dirs: List[str]) -> dict:
                 if terminal:
                     key = "Terminal"
                 else:
-                    for category in categories:
+                    for category in categories[::-1]:
                         if category in GLYPH_MAP:
                             key = category
                             break
