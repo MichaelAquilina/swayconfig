@@ -103,9 +103,11 @@ def get_all_desktop_entries(data_dirs: List[str]) -> dict:
         "Terminal": "  ",
         "WebBrowser": "  ",
         "Game": "  ",
-        "Security": "  ",
+        "Security": "  ",
         "Graphics": "  ",
         "System": "  ",
+        "TextEditor": "  ",
+        "Network": "  ",
         "Default": "  ",
     }
 
