@@ -106,7 +106,7 @@
     "pulseaudio": {
         "format": "{volume:>3}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "<span foreground=\"red\">{volume:>3}% </span>",
+        "format-muted": "<span foreground=\"#EE204D\">{volume:>3}% </span>",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -125,7 +125,7 @@
     "pulseaudio#2": {
         "format": "{format_source}",
         "format-source": "{volume:>3}% ",
-        "format-source-muted": "<span foreground=\"red\">{volume:>3}% </span>",
+        "format-source-muted": "<span foreground=\"#EE204D\">{volume:>3}% </span>",
         "interval": 10,
         "tooltip": false,
         "on-click": "pavucontrol --tab 4",
