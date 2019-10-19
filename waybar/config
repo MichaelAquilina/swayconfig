@@ -117,7 +117,7 @@
         },
         "interval": 10,
         "tooltip": false,
-        "on-click": "pavucontrol",
+        "on-click": "pavucontrol --tab 3",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%"
     }
