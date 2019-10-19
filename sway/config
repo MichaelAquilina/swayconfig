@@ -34,7 +34,7 @@ bar {
 }
 
 output * {
-    background $HOME/backgrounds/darksouls.jpg fill
+    background $HOME/backgrounds/theexpanse.png fill
 }
 
 # By default disable inbuilt monitor. Turn on using alt+insert if needed
