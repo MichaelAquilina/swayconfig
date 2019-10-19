@@ -76,7 +76,7 @@ window#waybar.hidded {
     animation-direction: alternate;
 }
 
-@keyframes blink_critcal {
+@keyframes blink_critical {
     to {
         color: #ff0000;
     }
@@ -84,7 +84,7 @@ window#waybar.hidded {
 
 #battery.critical:not(.charging) {
     color: #ffffff;
-    animation-name: blink_critcal;
+    animation-name: blink_critical;
     animation-duration: 0.3s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
