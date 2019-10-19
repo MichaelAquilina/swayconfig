@@ -113,6 +113,7 @@ def get_all_desktop_entries(data_dirs: List[str]) -> dict:
         "Network": "  ",
         "Calculator": "  ",
         "FileManager": "  ",
+        "Office": "  ",
         "Default": "  ",
     }
 
@@ -177,10 +178,11 @@ def get_desktop(path: str) -> dict:
     # Include for potential debugging purposes
     result = {"_path": path}
 
-    # Skip first line containing [Desktop Entry]
-    for line in data[1:]:
+    for line in data:
         # Finding any new section means we should stop
-        if re.match(r"\[.+\]", line):
+        match = re.match(r"\[(?P<name>.+)\]", line)
+
+        if match and match.group("name") != "Desktop Entry":
             break
 
         if "=" not in line:
