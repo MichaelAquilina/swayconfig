@@ -145,6 +145,8 @@ def get_all_desktop_entries(data_dirs: List[str]) -> dict:
                 if no_display or not name:
                     continue
 
+                # priority of glyph should start from the
+                # end of the category list
                 for category in categories[::-1]:
                     if category in GLYPH_MAP:
                         key = category
