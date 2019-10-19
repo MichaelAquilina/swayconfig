@@ -10,6 +10,7 @@
         "clock"
     ],
     "modules-right": [
+        "pulseaudio#2",
         "network",
         "backlight",
         "pulseaudio",
@@ -105,7 +106,7 @@
     "pulseaudio": {
         "format": "{volume:>3}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
+        "format-muted": "<span foreground=\"red\">{volume:>3}% </span>",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -113,12 +114,22 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", ""]
+            "default": [""]
         },
         "interval": 10,
         "tooltip": false,
         "on-click": "pavucontrol --tab 3",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%"
+    },
+    "pulseaudio#2": {
+        "format": "{format_source}",
+        "format-source": "{volume:>3}% ",
+        "format-source-muted": "<span foreground=\"red\">{volume:>3}% </span>",
+        "interval": 10,
+        "tooltip": false,
+        "on-click": "pavucontrol --tab 4",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
     }
 }
