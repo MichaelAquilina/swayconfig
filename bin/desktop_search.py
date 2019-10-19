@@ -111,6 +111,8 @@ def get_all_desktop_entries(data_dirs: List[str]) -> dict:
         "TextEditor": "  ",
         "Player": "  ",
         "Network": "  ",
+        "Calculator": "  ",
+        "FileManager": "  ",
         "Default": "  ",
     }
 
