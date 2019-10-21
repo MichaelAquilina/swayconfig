@@ -176,6 +176,9 @@ bindsym {
     Mod1+Shift+e exec $HOME/bin/sway-power.sh
     # Start resize mode
     Mod1+r mode "resize"
+
+    Mod1+s move window to scratchpad
+    Mod1+Shift+s scratchpad show
 }
 
 
