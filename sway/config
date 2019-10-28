@@ -34,7 +34,7 @@ bar {
 }
 
 output * {
-    background $HOME/backgrounds/theexpanse.png fill
+    background $HOME/backgrounds/theexpanse2.png fill
 }
 
 # By default disable inbuilt monitor. Turn on using alt+insert if needed
