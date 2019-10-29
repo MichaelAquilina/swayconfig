@@ -34,7 +34,7 @@ bar {
 }
 
 output * {
-    background $HOME/backgrounds/theexpanse3.png fill
+    background $HOME/backgrounds/$(ls $HOME/backgrounds | shuf -n 1) fill
 }
 
 # By default disable inbuilt monitor. Turn on using alt+insert if needed
