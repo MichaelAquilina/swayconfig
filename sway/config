@@ -110,6 +110,9 @@ bindsym {
     # kill focused window
     Mod1+q kill
 
+    # rotate background wallpaper in the backgrounds folder
+    Mod1+Shift+r output * background $(ls $HOME/backgrounds/*.png | shuf -n 1) fill
+
     # Notifications
     Mod1+n exec makoctl invoke
     Mod1+m exec makoctl dismiss
