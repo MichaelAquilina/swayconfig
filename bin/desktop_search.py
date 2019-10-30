@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 import argparse
+import fcntl
 import os
 import re
 import shutil
@@ -221,4 +222,11 @@ def get_executable(value: str) -> List[str]:
 
 
 if __name__ == "__main__":
-    main()
+    pid_file = os.path.expanduser("~/.desktop_search.pid")
+    fp = open(pid_file, "w")
+    try:
+        fcntl.lockf(fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        main()
+    except IOError:
+        print("Another instance is already running")
+        sys.exit(0)
