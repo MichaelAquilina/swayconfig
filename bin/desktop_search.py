@@ -56,6 +56,14 @@ def main() -> None:
         print(desktop_entries[options.preview].get("Comment", ""))
         return
 
+    pid_file = os.path.expanduser("~/.desktop_search.pid")
+    fp = open(pid_file, "w")
+    try:
+        fcntl.lockf(fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except IOError:
+        print("Another instance is already running")
+        sys.exit(0)
+
     # Data to feed to fzf
     data = "\n".join(sorted(desktop_entries.keys()))
 
@@ -222,11 +230,4 @@ def get_executable(value: str) -> List[str]:
 
 
 if __name__ == "__main__":
-    pid_file = os.path.expanduser("~/.desktop_search.pid")
-    fp = open(pid_file, "w")
-    try:
-        fcntl.lockf(fp, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        main()
-    except IOError:
-        print("Another instance is already running")
-        sys.exit(0)
+    main()
