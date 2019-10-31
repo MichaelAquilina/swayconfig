@@ -13,6 +13,7 @@ install:
 	ln -sf $$PWD/kitty $$HOME/.config/kitty
 	rm -rf $$HOME/.config/kanshi
 	ln -sf $$PWD/kanshi $$HOME/.config/kanshi
+	rm -rf $$HOME/backgrounds
 	ln -sf $$PWD/backgrounds $$HOME/backgrounds
 	ln -sf $$PWD/bin/playerbar.sh $$HOME/bin/playerbar.sh
 	ln -sf $$PWD/bin/grim_wrapper.sh $$HOME/bin/grim_wrapper.sh
